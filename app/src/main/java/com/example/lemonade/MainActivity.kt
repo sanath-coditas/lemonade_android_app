@@ -36,7 +36,6 @@ class MainActivity : AppCompatActivity() {
     private val SELECT = "select"
     private val SQUEEZE = "squeeze"
     private val DRINK = "drink"
-    // RESTART represents the state where the lemonade has been drunk and the glass is empty
     private val RESTART = "restart"
     private var lemonadeState = "select"
     private var lemonSize = -1
