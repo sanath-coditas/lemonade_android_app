@@ -33,21 +33,14 @@ class MainActivity : AppCompatActivity() {
     private val LEMONADE_STATE = "LEMONADE_STATE"
     private val LEMON_SIZE = "LEMON_SIZE"
     private val SQUEEZE_COUNT = "SQUEEZE_COUNT"
-    // SELECT represents the "pick lemon" state
     private val SELECT = "select"
-    // SQUEEZE represents the "squeeze lemon" state
     private val SQUEEZE = "squeeze"
-    // DRINK represents the "drink lemonade" state
     private val DRINK = "drink"
     // RESTART represents the state where the lemonade has been drunk and the glass is empty
     private val RESTART = "restart"
-    // Default the state to select
     private var lemonadeState = "select"
-    // Default lemonSize to -1
     private var lemonSize = -1
-    // Default the squeezeCount to -1
     private var squeezeCount = -1
-
     private var lemonTree = LemonTree()
     private var lemonImage: ImageView? = null
 
@@ -166,16 +159,12 @@ class MainActivity : AppCompatActivity() {
         Snackbar.make(
             findViewById(R.id.constraint_Layout),
             squeezeText,
-            Snackbar.LENGTH_SHORT
+            Snackbar.LENGTH_SHORT,
         ).show()
         return true
     }
 }
 
-/**
- * A Lemon tree class with a method to "pick" a lemon. The "size" of the lemon is randomized
- * and determines how many times a lemon needs to be squeezed before you get lemonade.
- */
 class LemonTree {
     fun pick(): Int {
         return (2..4).random()
